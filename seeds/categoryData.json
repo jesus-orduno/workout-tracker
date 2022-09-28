@@ -1,0 +1,18 @@
+[
+    {
+        "category_name": "Cardio",
+        "category_description": "Cardiovascular exercise is any exercise that raises your heart rate. It's also called aerobic exercise. Examples of cardio include running, walking, swimming, and cycling. Cardio is important for your heart, lungs, and overall health. It can help you lose weight and keep it off. It can also lower your risk of heart disease, stroke, and other health conditions."
+    },
+    {
+        "category_name": "Strength",
+        "category_description": "Strength training is any type of exercise that causes your muscles to contract against resistance. It builds muscle strength and increases muscle size. Examples of strength training include lifting weights, using resistance bands, and bodyweight exercises like push-ups and squats. Strength training is important for building and maintaining muscle mass. It can also help you burn more calories and lose weight."
+    },
+    {
+        "category_name": "Flexibility",
+        "category_description": "Flexibility exercises are any type of exercise that increases your range of motion. They can help you improve your posture and reduce your risk of injury. Examples of flexibility exercises include yoga, Pilates, and stretching. Flexibility exercises are important for your overall health. They can help you move better and feel better."
+    },
+    {
+        "category_name": "Balance",
+        "category_description": "Balance exercises are any type of exercise that helps you improve your balance. They can help you prevent falls and injuries. Examples of balance exercises include yoga, Pilates, and tai chi. Balance exercises are important for your overall health. They can help you move better and feel better."
+    }
+]
