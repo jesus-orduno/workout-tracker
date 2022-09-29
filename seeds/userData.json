@@ -1,0 +1,17 @@
+[
+    {
+        "username": "admin",
+        "password": "admin",
+        "email": "admin@localhost"
+    },
+    {
+        "username": "user",
+        "password": "user",
+        "email": "user@localhost"
+    },
+    {
+        "username": "user2",
+        "password": "user2",
+        "email": "user2@localhost"
+    }
+]

@@ -1,6 +1,6 @@
 const User = require('./User');
-const Exercise = require('./Exercise');
-const Category = require('./Category');
+const Exercise = require('./exercises');
+const Category = require('./categories');
 // create associations
 User.hasMany(Exercise, {
     foreignKey: 'user_id',
