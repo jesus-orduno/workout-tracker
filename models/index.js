@@ -10,7 +10,7 @@ Exercise.belongsTo(Category, {
     foreignKey: 'exercise_category',
     onDelete: 'CASCADE'
     });
-Exercise.belongsTo(User, {
+Exercise.hasMany(User, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
     });
