@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Category, Exercise } = require('../../models');
-
+const withAuth = require('../../utils/auth');
 // The `/api/categories` endpoint
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   Category.findAll({
     include: [
       {
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
   Category.findOne({
     where: {
       id: req.params.id,
@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Category.create({
     category_name: req.body.category_name,
     category_description: req.body.category_description,
@@ -56,7 +56,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Category.update(
         {
         category_name: req.body.category_name,
@@ -81,7 +81,7 @@ router.put('/:id', (req, res) => {
         });
     });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Category.destroy({
         where: {
         id: req.params.id,

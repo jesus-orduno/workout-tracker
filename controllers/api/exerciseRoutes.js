@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Category, Exercise, User } = require('../../models');
-
+const withAuth = require('../../utils/auth')
 // The `/api/exercises` endpoint
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Exercise.findAll({
         include: [
         {
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
         });
     });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     Exercise.findOne({
         where: {
         id: req.params.id,
@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
         });
     });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Exercise.create({
         exercise_name: req.body.exercise_name,
         exercise_description: req.body.exercise_description,
@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
         });
     });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Exercise.update(
         {
             exercise_name: req.body.exercise_name,
@@ -91,7 +91,7 @@ router.put('/:id', (req, res) => {
         });
     });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Exercise.destroy({
         where: {
         id: req.params.id,
