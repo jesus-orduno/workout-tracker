@@ -57,47 +57,47 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-    Category.update(
-        {
-        category_name: req.body.category_name,
-        category_description: req.body.category_description,
-        },
-        {
-        where: {
-            id: req.params.id,
-        },
-        }
-    )
-        .then((dbCategoryData) => {
-        if (!dbCategoryData) {
-            res.status(404).json({ message: 'No category found with this id' });
-            return;
-        }
-        res.json(dbCategoryData);
-        })
-        .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-        });
+  Category.update(
+    {
+      category_name: req.body.category_name,
+      category_description: req.body.category_description,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((dbCategoryData) => {
+      if (!dbCategoryData) {
+        res.status(404).json({ message: 'No category found with this id' });
+        return;
+      }
+      res.json(dbCategoryData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
+});
 
 router.delete('/:id', withAuth, (req, res) => {
-    Category.destroy({
-        where: {
-        id: req.params.id,
-        },
+  Category.destroy({
+    where: {
+    id: req.params.id,
+    },
+  })
+    .then((dbCategoryData) => {
+      if (!dbCategoryData) {
+        res.status(404).json({ message: 'No category found with this id' });
+        return;
+      }
+      res.json(dbCategoryData);
     })
-        .then((dbCategoryData) => {
-        if (!dbCategoryData) {
-            res.status(404).json({ message: 'No category found with this id' });
-            return;
-        }
-        res.json(dbCategoryData);
-        })
-        .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-        });
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
+});
 
 module.exports = router;
