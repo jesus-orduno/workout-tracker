@@ -1,7 +1,7 @@
 [
     {
         "exercise_name": "Bench Press",
-        "exercise_description": "Lie on your back on a flat bench. Grasp the barbell with an overhand grip that is slightly wider than shoulder width. Lift the bar off the rack and hold it straight over you with your arms locked. Lower the bar to your chest by flexing your elbows and inhaling. Press the bar back to the starting position as you exhale. Repeat for the prescribed number of repetitions.",
+        "exercise_description": "Lie flat on a bench. Hold the bar slightly more than sholder width. Lift bar off rack, hold straight over you with arms locked. Lower bar by flexing elbows and inhaling. Move bar back up as exhaling.",
         "exercise_category": 2,
         "exercise_equipment": "Barbell"
     },
@@ -13,13 +13,7 @@
     },
     {
         "exercise_name": "Squat",
-        "exercise_description": "Stand with your feet shoulder-width apart and your toes pointed slightly outward. Hold a barbell across the upper back with an overhand grip that is slightly wider than shoulder width. Bend your knees and lower your hips back and down as if you were going to sit in a chair. Keep your back straight and your head up. Continue down until your thighs are at least parallel to the floor. Press through your heels to return to the starting position. Repeat for the prescribed number of repetitions.",
-        "exercise_category": 2,
-        "exercise_equipment": "Barbell"
-    },
-    {
-        "exercise_name": "Deadlift",
-        "exercise_description": "Stand with your feet shoulder-width apart and your toes pointed slightly outward. Hold a barbell across the upper back with an overhand grip that is slightly wider than shoulder width. Bend your knees and lower your hips back and down as if you were going to sit in a chair. Keep your back straight and your head up. Continue down until your thighs are at least parallel to the floor. Press through your heels to return to the starting position. Repeat for the prescribed number of repetitions.",
+        "exercise_description": "Stand with feet shoulder-width apart. Hold barbell across upper back with overhand grip. Bend knees and lower hips back and down. Continue down until thighs are parallel to floor. Return up.",
         "exercise_category": 2,
         "exercise_equipment": "Barbell"
     },
