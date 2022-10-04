@@ -17,6 +17,9 @@ Exercise.init(
             },
         exercise_description: {
             type: DataTypes.STRING,
+            validate: {
+                len: [1, 2000]
+                },
             allowNull: false
             },
         exercise_category: {
