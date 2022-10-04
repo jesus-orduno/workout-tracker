@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Exercise } = require('../../models');
 const withAuth = require('../../utils/auth');
+const { body, validationResult } = require('express-validator');
 
 // The `/api/users` endpoint
 
@@ -67,17 +68,27 @@ router.get(':email', withAuth, (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', [
+  body('username').isLength({ min: 1 }).withMessage('Please enter a username'),
+  body('email').isEmail().withMessage('Please enter a valid email address'),
+  body('password').isLength({ min: 6 }).withMessage('Please enter a password with at least 6 characters'),
+], (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   User.create({
     username: req.body.username,
     email: req.body.email,
-    password: req.body.password,
+    password: req.body.password
   })
     .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
+
         res.json(dbUserData);
       });
     })
