@@ -23,6 +23,7 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
+  loggedIn: false,
   store: new SequelizeStore({
     db: sequelize
   })

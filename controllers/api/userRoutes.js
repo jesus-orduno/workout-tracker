@@ -68,11 +68,11 @@ router.get(':email', withAuth, (req, res) => {
     });
 });
 
-router.post('/', [
+router.post('/', 
   body('username').isLength({ min: 1 }).withMessage('Please enter a username'),
   body('email').isEmail().withMessage('Please enter a valid email address'),
   body('password').isLength({ min: 6 }).withMessage('Please enter a password with at least 6 characters'),
-], (req, res) => {
+(req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -98,7 +98,7 @@ router.post('/', [
     });
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
   User.findOne({
     where: {
       email: req.body.email
@@ -117,7 +117,7 @@ router.post('/login', (req, res) => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
+        req.session.logged_in = true;
         res.json({ user: dbUserData, message: 'You are now logged in!' });
       });
     });

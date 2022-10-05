@@ -68,7 +68,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       exercise.get({ plain: true })
     );
 
-    res.render('dashboard', {
+    res.render('homepage', {
       exercises,
       logged_in: req.session.logged_in,
     });
