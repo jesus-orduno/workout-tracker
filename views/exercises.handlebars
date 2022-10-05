@@ -1,17 +1,16 @@
 <section id="exercises" class="container">
-    <h1>My Workouts</h1>
+  <h1>My Workouts</h1>
 
-    {{#each exercises}}
-      <div class="exercises">
-      <h3>{{exercise_name}}</h3>
-      <p>{{exercise_description}}</p>
-      <div class="categories">
-        <small>Exercise Category: <span>{{exercise_category}}</span></small>
-      </div>
+  {{#each exercises}}
+    <div class="exercises">
+    <h3>{{exercise_name}}</h3>
+    <p>{{exercise_description}}</p>
+    <div class="categories">
+      <small>Exercise Category: <span>{{exercise_category}}</span></small>
     </div>
-    {{else}}
-      <h3>No Workouts Yet</h3>
-    {{/each}}
+  </div>
+  {{else}}
+    <h3>No Workouts Yet</h3>
+  {{/each}}
     
-
-  </section>
+</section>
