@@ -76,7 +76,7 @@
 </main>
 
 {{!-- Modal: Add another workout or view workouts --}}
-<div id="myModal" class="modal fade">
+<div id="workout-modal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -85,9 +85,9 @@
       <div class="modal-body">
         <p>What would you like to do next?</p>
         <form>
-          <a class="btn close_modal pt-1 bye-btn" href="/add_workout" role="button">Add Another Workout</a>
+          <a class="btn close_modal pt-1 bye-btn" href="/views/addWorkout.handlebars" role="button">Add Another Workout</a>
           &nbsp;
-          <a class="btn close_modal pt-1 bye-btn" href="/view_workouts" role="button">View Workouts</a>
+          <a class="btn close_modal pt-1 bye-btn" href="/views/exercises.handlebars" role="button">View Workouts</a>
         </form>
       </div>
     </div>
