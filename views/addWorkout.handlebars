@@ -19,7 +19,7 @@
                 <label class="label">Workout Category *</label>
                 <div class="control">
                   <div class="select">
-                    <select id="category">
+                    <select id="addWorkoutCategory">
                       <option>Cardio</option>
                       <option>Strength</option>
                       <option>Flexibility</option>
@@ -59,7 +59,7 @@
 
           {{!-- Add Workout Button --}}
           <footer class="card-footer" id="add-a-workout">
-            <button id="addWorkoutButton">Add Workout</button>
+            <button id="addWorkoutButton" onclick="addWorkoutHandler()">Add Workout</button>
           </footer>
         </div>
       </div>
@@ -85,3 +85,5 @@
     </div>
   </div>
 </div>
+
+<script src="/js/addWorkout.js"></script>
