@@ -81,7 +81,7 @@ router.get('/addWorkout', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('addWorkout', {
       ...user,
       logged_in: true,
     });
@@ -105,6 +105,17 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
+      logged_in: true,
+    });
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/editPassword', withAuth, async (req, res) => {
+  try {
+    res.render('editPassword', {
       logged_in: true,
     });
   }
