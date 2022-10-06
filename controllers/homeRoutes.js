@@ -75,9 +75,38 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 router.get('/addWorkout', withAuth, async (req, res) => {
   try {
-    res.render('addWorkout', {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
       logged_in: true,
-      });
+    });
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      attributes: { exclude: ['password'] },
+      where: {
+        username: req.session.username,
+      }
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+
+    res.render('profile', {
+      ...user,
+      logged_in: true,
+    });
   }
   catch (err) {
     res.status(500).json(err);
