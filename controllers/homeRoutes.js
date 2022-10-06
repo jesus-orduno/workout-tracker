@@ -81,7 +81,7 @@ router.get('/addWorkout', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('addWorkout', {
       ...user,
       logged_in: true,
     });
