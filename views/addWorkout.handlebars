@@ -29,35 +29,27 @@
                 </div>
               </div>
 
-              {{!-- Distance Input --}}
+              {{!-- Name Input --}}
               <div class="field">
-                <label class="label">Distance *</label>
+                <label class="label">Exercise Name *</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="If distance is not a factor, type 0." id="distance">
+                  <input class="input" type="text" placeholder="Name" id="addWorkoutName">
                 </div>
               </div>
 
-              {{!-- Duration Input --}}
+              {{!-- Description Input --}}
               <div class="field">
-                <label class="label">Duration *</label>
+                <label class="label">Short Description *</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="How long did you do this exercise for?" id="duration">
+                  <input class="input" type="text" placeholder="Description here" id="addWorkoutDescription">
                 </div>
               </div>
 
-              {{!-- Date Input --}}
+              {{!-- Equipment Input --}}
               <div class="field">
-                <label for="date-input" class="label">Date *</label>
+                <label for="date-input" class="label">Did you use any equipment for this exercise?</label>
                 <div class="control">
-                  <input class="form-control" type="date" value="" id="date-input">
-                </div>
-              </div>
-
-              {{!-- Details Input --}}
-              <div class="field">
-                <label class="label">Workout Details</label>
-                <div class="control">
-                  <textarea class="textarea" placeholder="Enter any other details about this workout. (i.e. reps, weight, etc.)" id="details"></textarea>
+                  <input class="input" type="text" placeholder="Skip if none" id="addWorkoutEquipment">
                 </div>
               </div>
 
@@ -67,7 +59,7 @@
 
           {{!-- Add Workout Button --}}
           <footer class="card-footer" id="add-a-workout">
-            <a href="#" type="submit" class="card-footer-item">Add Workout</a>
+            <button id="addWorkoutButton">Add Workout</button>
           </footer>
         </div>
       </div>
@@ -85,9 +77,9 @@
       <div class="modal-body">
         <p>What would you like to do next?</p>
         <form>
-          <a class="btn close_modal pt-1 bye-btn" href="/views/addWorkout.handlebars" role="button">Add Another Workout</a>
+          <a class="btn close_modal pt-1 bye-btn" href="/addWorkout" role="button">Add Another Workout</a>
           &nbsp;
-          <a class="btn close_modal pt-1 bye-btn" href="/views/exercises.handlebars" role="button">View Workouts</a>
+          <a class="btn close_modal pt-1 bye-btn" href="/dashboard" role="button">Return to dashboard</a>
         </form>
       </div>
     </div>
