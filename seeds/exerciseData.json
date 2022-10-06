@@ -8,8 +8,7 @@
     {
         "exercise_name": "Running",
         "exercise_description": "Run for the prescribed distance or time.",
-        "exercise_category": 1,
-        "exercise_equipment": "None"
+        "exercise_category": 1
     },
     {
         "exercise_name": "Squat",
@@ -20,8 +19,7 @@
     {
         "exercise_name": "Bear Crawl",
         "exercise_description": "Get on all fours with your hands directly under your shoulders and your knees directly under your hips. Keep your back flat and your head up. Crawl forward for the prescribed distance.",
-        "exercise_category": 1,
-        "exercise_equipment": "None"
+        "exercise_category": 1
     },
     {
         "exercise_name": "Push Up",

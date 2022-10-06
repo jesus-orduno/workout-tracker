@@ -24,5 +24,16 @@ addWorkoutHandler = async () => {
         } else {
             alert(response.statusText);
         }
+    } else if (exercise_name && exercise_description && exercise_category) {
+        const response = await fetch('/api/exercises', {
+            method: 'POST',
+            body: JSON.stringify({ exercise_name, exercise_description, exercise_category }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+        if (response.ok) {
+            document.location.replace('/dashboard');
+        } else {
+            alert(response.statusText);
+        }
     }
 };
