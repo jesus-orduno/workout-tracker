@@ -1,7 +1,24 @@
-<section style="background-color: white;">
+  <style>
+    .container {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      
+    }
+    .card {
+    
+      background-image: linear-gradient(rgb(173, 173, 173),white);
+      text-align: center;
+      font-weight: 700;
+      line-height: 2.5;
+      color: black;
+    }
+    </style>
+<section class="container">
+    <div class="card">
     <h1>Delete Account</h1>
     <p>Are you sure you want to delete your account? This action is permanet and cannot be undone</p>
     <button id="deleteAccountButton" onclick="deleteAccountHandler()">Delete Account</button>
+    </div>
 </section>
 
 <script src="/js/deleteAccount.js"></script>
