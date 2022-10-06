@@ -153,18 +153,22 @@ router.put('/', withAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/', withAuth, (req, res) => {
   User.destroy({
     where: {
-      id: req.params.id
+      username : req.session.username
     }
   })
     .then(dbUserData => {
       if (!dbUserData) {
-        res.status(404).json({ message: 'No user found with this id' });
+        res.status(404).json({ message: 'An error occured, please try again' });
         return;
       }
       res.json(dbUserData);
+      req.session.destroy(() => {
+        res.status(204).end();
+      }
+      );
     })
     .catch(err => {
       console.log(err);
