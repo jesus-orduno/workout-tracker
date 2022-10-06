@@ -50,21 +50,22 @@ router.get('/signup', (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
+    const exerciseData = await Exercise.findAll({
       include: [
         {
-          model: Exercise,
-          attributes: ['id', 'exercise_name', 'exercise_description', 'exercise_category'],
+          model: Category,
+          attributes: ['category_name'],
         },
       ],
     });
 
-    const user = userData.get({ plain: true });
+    const exercises = exerciseData.map((exercise) =>
+      exercise.get({ plain: true })
+    );
 
     res.render('homepage', {
-      ...user,
-      logged_in: true,
+      exercises,
+      logged_in: req.session.logged_in,
     });
   }
   catch (err) {

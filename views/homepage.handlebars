@@ -1,1 +1,13 @@
-<p>Hello World</p>
+<section id="exercises" class="container">
+  <h1>Workouts</h1>
+
+  {{#each exercises}}
+    <div class="exercises">
+    <h3>{{exercise_name}}</h3>
+    <p>{{exercise_description}}</p>
+  </div>
+  {{else}}
+    <h3>No Workouts Yet</h3>
+  {{/each}}
+    
+</section>
