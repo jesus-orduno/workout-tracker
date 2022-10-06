@@ -124,4 +124,15 @@ router.get('/editPassword', withAuth, async (req, res) => {
   }
 });
 
+router.get('/deleteAccount', withAuth, async (req, res) => {
+  try {
+    res.render('deleteAccount', {
+      logged_in: true,
+    });
+  }
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
