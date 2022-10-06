@@ -93,9 +93,20 @@ router.get('/addWorkout', withAuth, async (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
+    const userData = await User.findOne({
+      attributes: { exclude: ['password'] },
+      where: {
+        username: req.session.username,
+      }
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+
     res.render('profile', {
+      ...user,
       logged_in: true,
-      });
+    });
   }
   catch (err) {
     res.status(500).json(err);
