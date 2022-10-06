@@ -54,7 +54,6 @@ router.post('/', withAuth, (req, res) => {
     exercise_description: req.body.exercise_description,
     exercise_category: req.body.exercise_category,
     exercise_equipment: req.body.exercise_equipment,
-    user_id: req.body.user_id,
   })
     .then((dbExerciseData) => res.json(dbExerciseData))
     .catch((err) => {
