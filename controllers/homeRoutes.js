@@ -5,6 +5,20 @@ const withAuth = require('../utils/auth');
 // The landing page
 router.get('/', withAuth, async (req, res) => {
   try {
+    const exerciseData = await Exercise.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+          model: Category,
+          attributes: ['category_name'],
+        },
+      ],
+    });
+
+    const exercises = exerciseData.map((exercise) =>
+      exercise.get({ plain: true })
+    );
 
     res.render('homepage', {
       exercises,
