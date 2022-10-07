@@ -1,7 +1,41 @@
 <section id="user" class="container">
+    <style>
+        .container{
+            font-size: larger;
+            padding-top: 50px;
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+        .card{
+       background-image: linear-gradient(rgb(173, 173, 173),white);
+      text-align: center;
+      line-height: 2.5;
+      color: black;
+        }
+        h1{
+            font-size:xx-large;
+            font-weight: 800;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .label {
+        
+            font-weight: 800;
+        }
+        p{
+            font-weight: 500;
+            font-size: larger;
+        }
+    </style>
+        <div class="row">
+      <div class="col-12">
+        <div class="card">
+    
     <h1>My Profile</h1>
     <div class="user">
-        <h3>{{username}}</h3>
+        <label class="label">Username:</label> 
+        <p>{{username}}</p>
+        <label class="label">Email:</label> 
         <p>{{email}}</p>
     </div>
     <a href="/editPassword">Change Password</a>
